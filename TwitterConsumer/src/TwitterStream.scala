@@ -21,7 +21,7 @@ object TwitterStream {
 		.setOAuthAccessToken("3605652613-4vrcEgv867w199ivavT187oQ7mJtvyjZj2X1rqd")
 		.setOAuthAccessTokenSecret("fMsH4jdt7XFIVfOoBJ2Ahqd3Sn4WwlPtaF2bGcPmv5Njg")
 		.setIncludeEntitiesEnabled(true)
-		.build
+    .build
 
 		def simpleStatusListener = new StatusListener() {
 			def onStatus(status: Status) { 
@@ -83,7 +83,7 @@ object TwitterStream {
 	def main(args: Array[String]) {
 
     println("test")
-    val filter=List("barclays","barclaycard","morgan stanley","santander")
+    val filter=List("twitter")
 		val twitterStream = new TwitterStreamFactory(Util.config).getInstance
 				twitterStream.addListener(Util.simpleStatusListener)
 				twitterStream.filter(new FilterQuery().track(filter.mkString(",")))
